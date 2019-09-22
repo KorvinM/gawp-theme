@@ -1,0 +1,27 @@
+a {
+	color: $color__link;
+	text-decoration: none;
+	transition: 0.25s all;
+
+	&:visited {
+		color: $color__link-visited;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color__link-hover;
+	}
+	&:focus {
+		outline: thin dotted;
+	}
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}
+
+button a{
+
+	&:visited{color: rgba(225, 225, 225, .8);
+}
+}

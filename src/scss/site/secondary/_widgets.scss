@@ -1,0 +1,23 @@
+.widget {
+	margin: 0 0 1.5em;
+
+	/* Make sure select elements fit in widgets. */
+	select {
+		max-width: 100%;
+	}
+
+	ul {
+		list-style: none;
+		margin-left: 0;
+	text-align: left;}
+
+
+	.gallery .gallery-item{
+		float: left;
+	}
+
+	// Loops to enumerate the classes for gallery columns.
+
+
+
+}

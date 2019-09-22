@@ -1,0 +1,89 @@
+/* base.scss
+ * imports _s sass
+ * adds ideas from html5 boilerplate styles
+ */
+
+ @import "variables-site/variables-site";
+ @import "mixins/mixins-master";
+ @import "normalize";
+ @import "typography/typography";
+ @import "elements/elements";
+ @import "forms/forms";
+ @import "navigation/navigation";
+ @import "modules/accessibility";
+ @import "modules/alignments";
+ @import "modules/clearings";
+ @import "site/secondary/widgets";
+ @import "site/site";
+ @import "media/media";
+
+ /*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ */
+
+::-moz-selection {
+  background: #4f3f30;
+  text-shadow: none;
+}
+
+::selection {
+  background: #4f3f30;
+  text-shadow: none;
+}
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ * ensure no overflow of textareas and figcaption elements
+ */
+
+textarea {
+  resize: vertical;
+  max-width: 99%;
+}
+.wp-block-gallery .blocks-gallery-image figcaption, .wp-block-gallery .blocks-gallery-item figcaption{
+  max-width:93%;left: 3%;
+}
+.logo{height: 1.2em;}
+
+.site{max-width:99%}

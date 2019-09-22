@@ -1,0 +1,30 @@
+.sticky {
+	display: block;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+article.post{
+	margin-bottom: 1em;
+}
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 0 0 0.24em;
+  //prevent very long strings in posts from breaking layout
+	p{word-wrap: break-word;}
+}
+
+.entry-footer span{
+  margin-right: 1em;
+}
+
+.entry-meta{
+	margin-bottom: 0.62em;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}

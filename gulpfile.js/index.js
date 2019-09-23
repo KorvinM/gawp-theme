@@ -13,8 +13,7 @@ const
   postcss       = require('gulp-postcss'),
   deporder      = require('gulp-deporder'),//https://www.npmjs.com/package/gulp-deporder
   concat        = require('gulp-concat'),
-  stripdebug    = require('gulp-strip-debug'),
-  uglify        = require('gulp-uglify'),
+  terser        = require('gulp-terser'),//https://www.npmjs.com/package/gulp-terser
   del           = require("del");
 ;
 
@@ -97,8 +96,7 @@ gulp.task('nav_js', () => {
   return gulp.src(nav_js.src)
     .pipe(deporder())
     .pipe(concat(nav_js.filename))
-    .pipe(stripdebug())
-    .pipe(uglify())
+    .pipe(terser())
     .pipe(gulp.dest(build_js));
 });
 
@@ -112,12 +110,11 @@ gulp.task('customizer_js', () => {
   return gulp.src(customizer_js.src)
     .pipe(deporder())
     .pipe(concat(customizer_js.filename))
-    .pipe(stripdebug())
-    .pipe(uglify())
+    .pipe(terser())
     .pipe(gulp.dest(build_js));
 });
 
-//user scripts can be added here. TODO: test this
+//user scripts can be added here.
 const js = {
   src         : config.src + 'js/scripts/**/*',
   filename    : 'scripts.js'
@@ -128,8 +125,7 @@ gulp.task('js', () => {
   return gulp.src(js.src)
     .pipe(deporder())
     .pipe(concat(js.filename))
-    .pipe(stripdebug())
-    .pipe(uglify())
+    .pipe(terser())
     .pipe(gulp.dest(build_js))
     .pipe(browsersync ? browsersync.reload({ stream: true }) : noop());
 

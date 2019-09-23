@@ -15,14 +15,14 @@ It does however minify the bundled JS and compiled CSS.
 
 ### Installation
 1. Clone or download the repo
+1. Rename gulpfile.js/config-sample.js to gulpfile.js/config.js
 1. Run `npm install`
 
 ### Usage
 * Gawp is designed to sit outside the public directory of your WordPress environment
-* rename gulpfile.js/config-sample.js to gulpfile.js/config.js
-  * edit that file to specify:
-    * your build path: it should be a new directory within wp-content/themes/
-    * your WordPress url
+* edit your gulpfile.js/config.js file to specify:
+  * your build path: it should be a new directory within wp-content/themes/
+  * your WordPress url
 * Gulp tasks are defined in gulpfile.js/index.js
   * `gulp build` builds the theme into the build directory specified
   * `gulp clean` will delete the build directory.

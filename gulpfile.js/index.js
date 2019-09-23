@@ -159,9 +159,8 @@ gulp.task('build', gulp.parallel('php', 'css', 'nav_js','customizer_js', 'js', '
  */
  // Browsersync options
  //https://www.browsersync.io/docs/options
- //replace proxy with your WP url
  const syncOpts = {
-   proxy       : config.wp,
+   proxy       : config.wp_siteurl,
    files       : config.build + '**/*',
    open        : false,
    notify      : false,

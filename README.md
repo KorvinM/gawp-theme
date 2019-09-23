@@ -24,7 +24,7 @@ It does however minify the bundled JS and compiled CSS.
     * your build path: it should be a new directory within wp-content/themes/
     * your WordPress url
 * Gulp tasks are defined in gulpfile.js/index.js
-* `gulp build` builds the theme into the build directory specifiedy theme directory
+* `gulp build` builds the theme into the build directory specified
 * `gulp clean` will delete the build directory.
-* `gulp watch` will run browsersync as a proxy to the specified WordPress url.
+* `gulp watch` will run browsersync as a proxy to the WordPress url specified.
 * `gulp` runs the default task, which runs `clean`, `build`, and `watch` in series.

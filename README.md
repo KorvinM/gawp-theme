@@ -11,8 +11,8 @@ It’s quite minimalist, with no transpiling or linting of JavaScript.
 It does however minify the bundled JS and compiled CSS.
 
 
-##How To Use
+## How To Use
 
-###Installation
+### Installation
 1. `git clone` or download the repo
-1. run `npm install` 
+1. run `npm install`

@@ -10,7 +10,7 @@ const
 
   // Gulp and plugins
   gulp          = require('gulp'),
-  gutil         = require('gulp-util'),
+  noop          = require('gulp-noop'),
   newer         = require('gulp-newer'),//https://www.npmjs.com/package/gulp-newer
   imagemin      = require('gulp-imagemin'),
   sass          = require('gulp-sass'),
@@ -83,7 +83,7 @@ gulp.task('css', gulp.series('images', () => {
     .pipe(sass(css.sassOpts))
     .pipe(postcss(css.processors))
     .pipe(gulp.dest(css.build))
-    .pipe(browsersync ? browsersync.reload({ stream: true }) : gutil.noop());
+    .pipe(browsersync ? browsersync.reload({ stream: true }) : noop());
 }));
 
 /* js processing
@@ -135,7 +135,7 @@ gulp.task('js', () => {
     .pipe(stripdebug())
     .pipe(uglify())
     .pipe(gulp.dest(build_js))
-    .pipe(browsersync ? browsersync.reload({ stream: true }) : gutil.noop());
+    .pipe(browsersync ? browsersync.reload({ stream: true }) : noop());
 
 });
 

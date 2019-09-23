@@ -10,7 +10,6 @@ Gawp compiles css from SASS and PostCss, and bundles JavaScript.
 It’s quite minimalist, with no transpiling or linting of JavaScript.
 It does however minify the bundled JS and compiled CSS.
 
-
 ## How To Use
 
 ### Installation
@@ -19,9 +18,10 @@ It does however minify the bundled JS and compiled CSS.
 1. Run `npm install`
 
 ### Usage
-* Gawp is designed to sit outside the public directory of your WordPress environment
+* Gawp is intended to sit outside the public directory of your WordPress environment
+* If you are building a theme for distribution, however, Gawp can sit inside the theme's own directory
 * Edit your gulpfile.js/config.js file to specify:
-  * your build path: it should be a new directory within wp-content/themes/
+  * your build path: it should be a new directory within wp-content/themes/, or the root directory if you are building a theme for distribution
   * your WordPress url
 * Gulp tasks are defined in gulpfile.js/index.js
   * `gulp build` builds the theme into the build directory specified

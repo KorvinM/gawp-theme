@@ -152,7 +152,7 @@ gulp.task('copy', () => {
 
 //clean settings
 const clean = {
-  //dryRun:true,
+  //force:true is needed if the build folder is specified as outside the root
   force: true
 }
 gulp.task('clean', () => {

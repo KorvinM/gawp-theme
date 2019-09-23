@@ -14,5 +14,5 @@ It does however minify the bundled JS and compiled CSS.
 ## How To Use
 
 ### Installation
-1. `git clone` or download the repo
-1. run `npm install`
+1. Clone or download the repo
+1. Run `npm install`

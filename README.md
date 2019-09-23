@@ -19,9 +19,8 @@ It does however minify the bundled JS and compiled CSS.
 
 ### Usage
 * Gawp is intended to sit outside the public directory of your WordPress environment
-* If you are building a theme for distribution, however, Gawp can sit inside the theme's own directory
 * Edit your gulpfile.js/config.js file to specify:
-  * your build path: it should be a new directory within wp-content/themes/, or the root directory if you are building a theme for distribution
+  * your build path: it should be a new directory within wp-content/themes/
   * your WordPress url
 * Gulp tasks are defined in gulpfile.js/index.js
   * `gulp build` builds the theme into the build directory specified

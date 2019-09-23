@@ -1,13 +1,9 @@
 /* Gulp.js configuration*/
 'use strict';
 
-const
-  // source and build folders
-  dir = {
-    src         : 'src/',
-    build       : 'build/'
-  },
+const config = require('./config.js');
 
+const
   // Gulp and plugins
   gulp          = require('gulp'),
   noop          = require('gulp-noop'),
@@ -29,8 +25,8 @@ var browsersync = false;
 /* PHP processing*/
 //settings
 const php = {
-  src           : dir.src + 'php/**/*.php',
-  build         : dir.build
+  src           : config.src + 'php/**/*.php',
+  build         : config.build
 };
 // copy PHP files
 gulp.task('php', () => {
@@ -42,8 +38,8 @@ gulp.task('php', () => {
 /* image processing*/
 // settings
 const images = {
-  src         : dir.src + 'img/**/*',
-  build       : dir.build + 'img/'
+  src         : config.src + 'img/**/*',
+  build       : config.build + 'img/'
 };
 //copy and minify images
 gulp.task('images', () => {
@@ -56,9 +52,9 @@ gulp.task('images', () => {
 /* CSS processing*/
 //settings
 var css = {
-  src         : dir.src + 'scss/style.scss',
-  watch       : dir.src + 'scss/**/*',
-  build       : dir.build,
+  src         : config.src + 'scss/style.scss',
+  watch       : config.src + 'scss/**/*',
+  build       : config.build,
   sassOpts: {
     outputStyle     : 'nested',
     imagePath       : images.build,
@@ -68,7 +64,7 @@ var css = {
   processors: [
     require('postcss-assets')({
       loadPaths: ['img/'],
-      basePath: dir.build,
+      basePath: config.build,
       baseUrl: '/wp-content/themes/gawp/'
     }),
     require('autoprefixer')({
@@ -89,11 +85,11 @@ gulp.task('css', gulp.series('images', () => {
 /* js processing
  * this is where it gets complicated */
 //our build directory for js remains constant, so lets abstract it here
-const build_js = dir.build + 'js/';
+const build_js = config.build + 'js/';
 
  // first, bundle two files from _s concerning navigation
 const nav_js = {
-  src         : dir.src + ['js/+(navigation|skip-link-focus-fix).js'],
+  src         : config.src + ['js/+(navigation|skip-link-focus-fix).js'],
   filename    : 'nav.js'
 };
 //no need to browsersync this task
@@ -108,7 +104,7 @@ gulp.task('nav_js', () => {
 
 // customizer.js needs to be bundled separately; it's loaded by customizer.php
 const customizer_js = {
-  src         : dir.src + ['js/customizer.js'],
+  src         : config.src + ['js/customizer.js'],
   filename    : 'customizer.js'
 };
 //no need to browsersync this task
@@ -123,7 +119,7 @@ gulp.task('customizer_js', () => {
 
 //user scripts can be added here. TODO: test this
 const js = {
-  src         : dir.src + 'js/scripts/**/*',
+  src         : config.src + 'js/scripts/**/*',
   filename    : 'scripts.js'
 };
 // JavaScript processing
@@ -142,12 +138,12 @@ gulp.task('js', () => {
 /* straight copy - used to copy files as is to the root*/
 //settings
 const copy = {
-  src         : dir.src + 'copy/**/*'
+  src         : config.src + 'copy/**/*'
 };
 // copy the files
 gulp.task('copy', () => {
   return gulp.src(copy.src)
-    .pipe(gulp.dest(dir.build));
+    .pipe(gulp.dest(config.build));
 });
 
 //clean settings
@@ -156,7 +152,7 @@ const clean = {
   force: true
 }
 gulp.task('clean', () => {
-  return del(dir.build, clean);
+  return del(config.build, clean);
 });
 
 // run all build tasks
@@ -169,8 +165,8 @@ gulp.task('build', gulp.parallel('php', 'css', 'nav_js','customizer_js', 'js', '
  //https://www.browsersync.io/docs/options
  //replace proxy with your WP url
  const syncOpts = {
-   proxy       : 'http://two.wordpress.test',
-   files       : dir.build + '**/*',
+   proxy       : config.wp,
+   files       : config.build + '**/*',
    open        : false,
    notify      : false,
    ghostMode   : false,

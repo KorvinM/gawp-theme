@@ -18,10 +18,13 @@ It does however minify the bundled JS and compiled CSS.
 1. Run `npm install`
 
 ### Usage
+* Gawp is designed to sit outside the public directory of your WordPress environment
+* rename gulpfile.js/config-sample.js to gulpfile.js/config.js
+  * edit that file to specify:
+    * your build path: it should be a new directory within wp-content/themes/
+    * your WordPress url
 * Gulp tasks are defined in gulpfile.js/index.js
-* `gulp build` builds the theme into the build directory specified in gulpfile.js/index.js
-* You could then copy the contents of the build dir into your empty theme directory
+* `gulp build` builds the theme into the build directory specifiedy theme directory
 * `gulp clean` will delete the build directory.
-* Alternatively gawp could be placed outside the public directory of your WP environment and the build directory specified as a new directory within wp-content/themes/
-* `gulp watch` - you'll need to specify the proxy setting in the Browsersync options
+* `gulp watch` will run browsersync as a proxy to the specified WordPress url.
 * `gulp` runs the default task, which runs `clean`, `build`, and `watch` in series.

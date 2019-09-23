@@ -2,3 +2,5 @@
 node_modules/
 #ignore build dir
 build/
+#ignore config
+gulpfile.js/config.js

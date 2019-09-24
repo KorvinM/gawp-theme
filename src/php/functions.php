@@ -19,8 +19,6 @@ if ( ! function_exists( 'gawp_setup' ) ) :
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on Gawp, use a find and replace
-		 * to change 'gawp' to the name of your theme in all the template files.
 		 */
 		load_theme_textdomain( 'gawp', get_template_directory() . '/languages' );
 

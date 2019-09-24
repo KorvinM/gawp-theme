@@ -14,8 +14,8 @@ const
   deporder      = require('gulp-deporder'),//https://www.npmjs.com/package/gulp-deporder
   concat        = require('gulp-concat'),
   terser        = require('gulp-terser'),//https://www.npmjs.com/package/gulp-terser
-  del           = require("del");
-;
+  del           = require("del"),
+  replace       = require("gulp-replace");
 
 // Browser-sync
 var browsersync = false;
@@ -31,6 +31,8 @@ const php = {
 gulp.task('php', () => {
   return gulp.src(php.src)
     .pipe(newer(php.build))
+    .pipe(replace('gawp', config.theme_slug))
+    .pipe(replace('Gawp', config.theme_name))
     .pipe(gulp.dest(php.build));
 });
 

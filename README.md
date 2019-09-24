@@ -17,14 +17,15 @@ assets. It’s quite minimalist, with no transpiling or linting.
 1. Run `npm install`
 
 ### Usage
-* Gawp is designed to sit outside the public directory of your WordPress environment
+* Gawp is designed to sit outside the public directory of your WordPress environment.
 * Edit your gulpfile.js/config.js file, where indicated, to specify:
-  * your build path: it should be a new directory within wp-content/themes/
+  * your build path - should be a new directory within wp-content/themes/
   * your WordPress site url
-  * your theme name NB: If you use 'Gawp' or 'gawp' in your php files, they will be replaced by your theme name or slug, and if you use 'Gawp' anywhere in your scss files, it too will be replaced by your theme name.
-* edit src/style.scss as appropriate.
-* Gulp tasks are defined in gulpfile.js/index.js, which is defined as the entry point for node purposes.
+  * your theme name.
+    * _NB: If you use 'Gawp' or 'gawp' in your php files, they will be replaced by your theme name or slug, and if you use 'Gawp' anywhere in your scss files, it too will be replaced by your theme name._
+* Edit src/style.scss as appropriate.
+* Gulp tasks are in gulpfile.js/index.js, which is defined as the entry point for node purposes;
   * `gulp build` builds the theme into the build directory specified
-  * `gulp clean` deletes the build directory.
-  * `gulp watch` runs browsersync as a proxy to the WordPress url specified.
+  * `gulp clean` deletes the build directory
+  * `gulp watch` runs browsersync as a proxy to the WordPress url specified
   * `gulp` runs the default task: `clean`, `build`, and `watch` in series.

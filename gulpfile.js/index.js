@@ -2,7 +2,9 @@
 'use strict';
 
 const config = require('./config.js');
-
+//convert config.theme_name into themeName and themeSlug
+const themeName = config.theme_name,
+      themeSlug = themeName.toLowerCase().replace(/\s/g, '');
 const
   // Gulp and plugins
   gulp          = require('gulp'),
@@ -32,8 +34,8 @@ const php = {
 gulp.task('php', () => {
   return gulp.src(php.src)
     .pipe(newer(php.build))
-    .pipe(replace('gawp', config.theme_slug))
-    .pipe(replace('Gawp', config.theme_name))
+    .pipe(replace('gawp', themeSlug))
+    .pipe(replace('Gawp', themeName))
     .pipe(gulp.dest(php.build));
 });
 
@@ -80,7 +82,7 @@ gulp.task('css', gulp.series('images', () => {
   return gulp.src(css.src)
     .pipe(sass(css.sassOpts))
     .pipe(postcss(css.processors))
-    .pipe(replace('Gawp', config.theme_name))
+    .pipe(replace('Gawp', themeName))
     .pipe(gulp.dest(css.build))
     .pipe(browsersync ? browsersync.reload({ stream: true }) : noop());
 }));

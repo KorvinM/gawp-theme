@@ -1,6 +1,6 @@
 {
   "name": "gawp",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "wp theme using gulp",
   "main": "gulpfile.js/index.js",
   "scripts": {

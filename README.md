@@ -21,6 +21,9 @@ assets. It’s quite minimalist, with no transpiling or linting.
 * Edit your gulpfile.js/config.js file, where indicated, to specify:
   * your build path: it should be a new directory within wp-content/themes/
   * your WordPress site url
+  * your theme name, and theme slug (i.e. your theme name in lowercase with no spaces) (TODO: automate this)
+    * gawp uses these two options in the build process, replacing 'Gawp' and 'gawp' in the theme templates, and sets the theme name in style.css's comments
+* edit src/style.scss as appropriate.
 * Gulp tasks are defined in gulpfile.js/index.js, which is defined as the entry point for node purposes.
   * `gulp build` builds the theme into the build directory specified
   * `gulp clean` deletes the build directory.

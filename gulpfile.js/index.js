@@ -15,7 +15,8 @@ const
   concat        = require('gulp-concat'),
   terser        = require('gulp-terser'),//https://www.npmjs.com/package/gulp-terser
   del           = require("del"),
-  replace       = require("gulp-replace");
+  replace       = require("gulp-replace")//https://www.npmjs.com/package/gulp-replace
+;
 
 // Browser-sync
 var browsersync = false;
@@ -79,6 +80,7 @@ gulp.task('css', gulp.series('images', () => {
   return gulp.src(css.src)
     .pipe(sass(css.sassOpts))
     .pipe(postcss(css.processors))
+    .pipe(replace('Gawp', config.theme_name))
     .pipe(gulp.dest(css.build))
     .pipe(browsersync ? browsersync.reload({ stream: true }) : noop());
 }));

@@ -23,18 +23,23 @@
 			</a>
 			<span class="sep"> | </span>
 				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				//set up logo path
-
-				$logoPath = get_template_directory_uri(). "/img/gawp.png";
-				//echo 'Theme: <a href="'.$logoPath .'" alt="Gawp">';
-				printf( esc_html__( '%1$s by %2$s', 'gawp' ), '<img src="'.$logoPath.'" class="logo" alt="Gawp"> Theme', '<a href="http://korvin.org/">Korvin M Media</a>' );
+        $theme = wp_get_theme();
+        $themeName = $theme->get( 'Name' );
+        $themeAuthor =  $theme->get( 'Author' );
+        $themeAuthorUri = $theme->get( 'AuthorURI' );
+				printf( esc_html__('%1$s by %2$s', 'gawp' ),
+          $themeName . ' Theme', '<a href="'.$themeAuthorUri .'">'.$themeAuthor.'</a>' );
 				?>
 		</div><!-- .site-info -->
   <div class="notice">
-    Gawp: free software under the terms of the GNU General Public License
-    <br><button><a href="http://github.com/korvinm">GET IT HERE</a></button>
-    <br/>Example content &#169; Korvin M Media 2019.
+    <?php
+    $logoPath = get_template_directory_uri(). "/img/logo.png";
+    printf( esc_html__( 'Theme built in %1$s %2$s', 'gawp' ),
+      '<img src="'.$logoPath.'" class="logo" alt="Gawp">',//1
+      ': free software by <a href="http://korvin.org/">Korvin M Media</a> under
+      the terms of the GNU General Public License' )//2
+    ;
+    ?>
   </div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->

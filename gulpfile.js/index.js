@@ -103,13 +103,10 @@ gulp.task('nav_js', () => {
 // customizer.js needs to be bundled separately; it's loaded by customizer.php
 const customizer_js = {
   src         : config.src + ['js/customizer.js'],
-  filename    : 'customizer.js'
 };
-//no need to browsersync this task
+//no need to deporder, concat or browsersync this task
 gulp.task('customizer_js', () => {
   return gulp.src(customizer_js.src)
-    .pipe(deporder())
-    .pipe(concat(customizer_js.filename))
     .pipe(terser())
     .pipe(gulp.dest(build_js));
 });
@@ -131,7 +128,8 @@ gulp.task('js', () => {
 
 });
 
-/* straight copy - used to copy files as is to the root*/
+/* straight copy
+ * copy files as is, from the copy directory to the root*/
 //settings
 const copy = {
   src         : config.src + 'copy/**/*'

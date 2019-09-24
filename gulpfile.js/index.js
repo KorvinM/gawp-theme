@@ -66,10 +66,10 @@ var css = {
     errLogToConsole : true
   },
   processors: [
-    require('postcss-assets')({
+    require('postcss-assets')({//https://www.npmjs.com/package/postcss-assets
       loadPaths: ['img/'],
       basePath: config.build,
-      baseUrl: '/wp-content/themes/gawp/'
+      baseUrl: config.build
     }),
     require('autoprefixer')({
     }),

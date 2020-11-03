@@ -113,7 +113,10 @@ const customizer_js = {
 //no need to deporder, concat or browsersync this task
 gulp.task('customizer_js', () => {
   return gulp.src(customizer_js.src)
-    .pipe(terser())
+    .pipe(terser({
+      keep_fnames: true,
+      mangle: false
+    }))
     .pipe(gulp.dest(build_js));
 });
 
@@ -128,7 +131,10 @@ gulp.task('js', () => {
   return gulp.src(js.src)
     .pipe(deporder())
     .pipe(concat(js.filename))
-    .pipe(terser())
+    .pipe(terser({
+      keep_fnames: true,
+      mangle: false
+    }))
     .pipe(gulp.dest(build_js))
     .pipe(browsersync ? browsersync.reload({ stream: true }) : noop());
 

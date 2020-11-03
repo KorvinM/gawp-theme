@@ -9,8 +9,8 @@
   "author": "Korvin M (http://korvin.org)",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^9.8.5",
-    "browser-sync": "^2.26.10",
+    "autoprefixer": "^9.8.6",
+    "browser-sync": "^2.26.13",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",
     "del": "^5.1.0",
@@ -19,11 +19,11 @@
     "gulp-deporder": "^1.2.0",
     "gulp-imagemin": "^6.2.0",
     "gulp-newer": "^1.4.0",
-    "gulp-noop": "^1.0.0",
+    "gulp-noop": "^1.0.1",
     "gulp-postcss": "^8.0.0",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.1.0",
-    "gulp-terser": "^1.2.0",
+    "gulp-terser": "^1.4.1",
     "postcss-assets": "^5.0.0"
   },
   "browserslist": [

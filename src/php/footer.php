@@ -10,7 +10,6 @@
  */
 
 ?>
-  </div><!--end .main-grid -->
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer flx">

@@ -34,7 +34,7 @@
     <?php
     $logoPath = get_template_directory_uri(). "/img/logo.png";
     printf( esc_html__( 'Theme built in %1$s %2$s', 'gawp' ),
-      '<img src="'.$logoPath.'" class="logo" alt="Gawp">',//1
+      '<img src="'.$logoPath.'" class="gawp-logo" alt="Gawp">',//1
       ': free software by <a href="http://korvin.org/">Korvin M Media</a> under
       the terms of the GNU General Public License' )//2
     ;

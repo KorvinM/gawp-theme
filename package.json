@@ -22,9 +22,10 @@
     "gulp-noop": "^1.0.1",
     "gulp-postcss": "^8.0.0",
     "gulp-replace": "^1.0.0",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^4.1.1",
     "gulp-terser": "^1.4.1",
-    "postcss-assets": "^5.0.0"
+    "postcss-assets": "^5.0.0",
+    "sass": "^1.36.0"
   },
   "browserslist": [
     "last 2 versions",

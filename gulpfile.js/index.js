@@ -11,7 +11,7 @@ const
   noop          = require('gulp-noop'),
   newer         = require('gulp-newer'),//https://www.npmjs.com/package/gulp-newer
   imagemin      = require('gulp-imagemin'),
-  sass          = require('gulp-sass'),
+  sass          = require('gulp-sass')(require('sass')),
   postcss       = require('gulp-postcss'),
   deporder      = require('gulp-deporder'),//https://www.npmjs.com/package/gulp-deporder
   concat        = require('gulp-concat'),

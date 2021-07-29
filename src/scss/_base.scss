@@ -1,12 +1,10 @@
-/* base.scss
- * imports _s sass
- * adds ideas from html5 boilerplate styles
- */
+/* base.scss */
 
  @import "variables-site/variables-site";
  @import "mixins/mixins-master";
  @import "normalize";
  @import "reset";
+ @import "helpers";
  @import "typography/typography";
  @import "elements/elements";
  @import "forms/forms";
@@ -14,6 +12,5 @@
  @import "modules/accessibility";
  @import "modules/alignments";
  @import "modules/clearings";
- @import "site/secondary/widgets";
  @import "site/site";
  @import "media/media";

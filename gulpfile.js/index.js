@@ -113,7 +113,9 @@ const customizer_js = {
 //no need to deporder, concat or browsersync this task
 gulp.task('customizer_js', () => {
   return gulp.src(customizer_js.src)
-    .pipe(terser({
+    .pipe(terser({  /* options
+       * keep_fnames (default: false) - pass true to prevent discarding or mangling of function names.
+       * this should obviate the need to pass mangle:false ? see https://github.com/terser/terser#minify-options */
       keep_fnames: true,
       mangle: false
     }))
